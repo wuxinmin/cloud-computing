@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>不惧“窥探” - AES</title>
+    <link rel="stylesheet" type="text/css" href="styles/main_styles.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/index_styles.css"/>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/crypto-js.js"></script>
+</head>
+<body>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <div class="content">
+        <script type="text/javascript" src="js/header.js"></script>
+
+        <div class="input_content">
+            <textarea id="input_origin" placeholder="请输入文字"></textarea>
+        </div>
+        <div class="option_line">
+            <div class="option_item">
+                <span style="margin-right: 5px;">模式</span>
+                <div class="select">
+                    <select id="mode" onchange="onModeChange()">
+                        <option value ="ecb">ECB</option>
+                        <option value ="cbc">CBC</option>
+                        <option value="ctr">CTR</option>
+                        <option value="ofb">OFB</option>
+                        <option value="cfb">CFB</option>
+                    </select>
+                </div>
+                <span style="margin: 0 5px;">填充</span>
+                <div class="select">
+                    <select id="padding">
+                        <option value ="pkcs7">Pkcs7</option>
+                        <option value ="ansix923">AnsiX923</option>
+                        <option value="iso10126">Iso10126</option>
+                        <option value="iso97971">Iso97971</option>
+                        <option value="nopadding">NoPadding</option>
+                        <option value="zeropadding">ZeroPadding</option>
+                    </select>
+                </div>
+                <div id="iv_content" class="option_item" style="display: none;">
+                    <span style="margin: 0 5px;">偏移量iv</span>
+                    <input id="iv" class="default_input" placeholder="ECB和CFB模式不填"/>
+                </div>
+                <span style="margin: 0 5px;">密钥</span>
+                <input id="key" class="default_input" placeholder="密钥必须8/16/32位"/>
+            </div>
+            <div class="btn_line">
+                <button id="encryption" class="main_btn_style">AES加密</button>
+                <button id="decryption" class="main_btn_style" style="margin-left: 10px">AES解密</button>
+            </div>
+        </div>
+        <div class="input_content">
+            <textarea id="input_result" placeholder="结果输出"></textarea>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/dialog_tips.js"></script>
+    <script type="text/javascript" src="js/AESPage.js"></script>
+</body>
+</html>
