@@ -1,0 +1,1 @@
+下载后直接运行run.bat文件，也可以在Symmetric and asymmetric encryption and decryption文件夹下运行.html文件点击数字证书下载解压后就可以运行
